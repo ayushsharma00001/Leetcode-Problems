@@ -17,16 +17,14 @@ class TreeNode {
         this.right = right;
     }
 }
-
 class Solution {
-    List<Integer> l1 = new ArrayList();
-
-    public List<Integer> postorderTraversal(TreeNode root) {
-        if (root == null)
+    List<Integer> l1 = new ArrayList<>();
+    public List<Integer> preorderTraversal(TreeNode root) {
+        if(root==null)
             return l1;
-        postorderTraversal(root.left);
-        postorderTraversal(root.right);
         l1.add(root.val);
+        preorderTraversal(root.left);
+        preorderTraversal(root.right);
         return l1;
     }
 }
